@@ -15,11 +15,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public void goToLogActivity(View view) {
         Intent toLog = new Intent(this,LogActivity.class);
         startActivity(toLog);
 
     }
+
 
 
     public void goToNormalActivity(View view) {
