@@ -6,20 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.example.bttraker.LogActivity">
 
-    
     <TextView
+        android:id="@+id/LogTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="please_log_your_temperature_today"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="#8BC34A"
+        android:text="please logyour bodytemperature tuday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"  />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.178" />
 
     <EditText
-        android:id="@+id/LoginputData"
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -28,17 +29,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306"   />
+        app:layout_constraintVertical_bias="0.397" />
 
     <Button
-        android:id="@+id/LogSaveButton"
+        android:id="@+id/LoginputData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.569" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,72 +7,76 @@
     android:background="#04B08E27"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/MainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BT_Tracker"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
 
-    <!--
-       <View
-           android:id="@+id/titleBackground"
-           android:layout_width="411dp"
-           android:layout_height="195dp"
-           android:background="#009688"
-           />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F44336"
+        android:text="Log Body Temperature"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:onClick="goToLogActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.287" />
 
-       <TextView
-           android:id="@+id/MainTitle"
-           android:layout_width="143dp"
-           android:layout_height="56dp"
-           android:text="BT_Tracker"
-           android:textAppearance="@style/TextAppearance.AppCompat.Large"
-           android:textColor="#FFFFFF"
-           tools:layout_editor_absoluteX="143dp"
-           tools:layout_editor_absoluteY="99dp" />
+    <TextView
+        android:id="@+id/MainButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF9800"
+        android:onClick="goToNormalActivity"
+        android:text="Check Normal Range"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.406" />
 
-       <ImageView
-           android:id="@+id/TitleImage"
-           android:layout_width="112dp"
-           android:layout_height="104dp"
-           app:srcCompat="@android:drawable/btn_star"
-           tools:layout_editor_absoluteX="0dp"
-           tools:layout_editor_absoluteY="76dp" />
+    <TextView
+        android:id="@+id/MainButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:text="Mechanism of Fever"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:onClick="goToMechanismActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.519" />
 
-       <LinearLayout
-           android:layout_width="414dp"
-           android:layout_height="333dp"
-           android:layout_marginBottom="56dp"
-           android:orientation="vertical"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintStart_toStartOf="parent">
-
-           <TextView
-               android:id="@+id/MainButton1"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:onClick="goToLogActivity"
-               android:text="Log Body Temperture"
-               android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-
-           <TextView
-               android:id="@+id/MainButton4"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Handling Fever"
-               android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-           <TextView
-               android:id="@+id/MainButton3"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:onClick="goToMechanismActivity"
-               android:text="Mechanism of Fever"
-               android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-           <TextView
-               android:id="@+id/MainButton2"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:onclick="goToNormalActivity"
-               android:text="Check Normal Range "
-               android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-       </LinearLayout>
-   -->
-   </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/MainButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8BC34A"
+        android:text="handing Fever"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.629" />
+</androidx.constraintlayout.widget.ConstraintLayout>

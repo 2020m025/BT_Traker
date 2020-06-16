@@ -18,5 +18,6 @@ public class MechanismActivity extends AppCompatActivity {
     public void goToLink1(View view) {
         Intent toLink1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.healthline.com/health/how-to-break-a-fever"));
 
+        startActivity(toLink1);
     }
-}
+
