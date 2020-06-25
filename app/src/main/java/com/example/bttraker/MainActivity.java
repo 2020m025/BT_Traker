@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements
     public void setReminder(View view) {
         // When user click "SET REMINDER " button , a toast message will
         // pop up to let user know that a reminder is set
-        Toast.makeTest(this, "Reminder set!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Reminder set!", Toast.LENGTH_SHORT).show();
         //Create an intent object to start
         //the ReminderBroadcastReceiver class
         Intent intent = new Intent(this, ReminderBroadcastReceiver.class);
