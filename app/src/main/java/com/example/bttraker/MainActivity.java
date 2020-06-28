@@ -3,7 +3,6 @@ package com.example.bttraker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -11,7 +10,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,8 +21,57 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Create a notification channel
         createNotificationChannel();
 
+        TextView mainButton1=findViewById(R.id.MainButton1);
+        //Add "an ear" to MainButton1
+        mainButton1.setOnClickListener(this);
+
+        TextView mainButton2=findViewById(R.id.MainButton2);
+        //Add "an ear" to mainButton2
+        mainButton2.setOnClickListener(this);
+
+        TextView mainButton3=findViewById(R.id.MainButton3);
+        //Add "an ear" to mainButton3
+        mainButton3.setOnClickListener(this);
+
+        TextView mainButton4=findViewById(R.id.MainButton4);
+        //Add "an ear" to mainButton4
+        mainButton4.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view){
+        switch(view.getId()){
+            case R.id.MainButton1:
+                // If MainButton1 is clicked , do  something
+                Intent toLog=new Intent(this , LogActivity.class);
+                startActivity(toLog);
+                break;
+
+            case R.id.MainButton2:
+                //If MainButton2 is clicked , do something
+                Intent toNormal = new Intent(this , NormalActivity.class);
+                startActivity(toNormal);
+                break;
+
+            case R.id.MainButton3:
+                //If MainButton3 is clicked , do something
+                Intent toMechanism = new Intent(this,MechanismActivity.class);
+                startActivity(toMechanism);
+                break;
+
+            case R.id.MainButton4:
+                //If MainButton3 is clicked , do something
+                Intent openFeverLink = new Intent(Intent.ACTION_VIEW ,
+                        Uri.parse("http://www.healthline.com/health/how-to-break-a-fever"));
+                //Verify that the intent openFeverLink will resolve properly
+                if(openFeverLink.resolveActivity(getPackageManager())!= null){
+                }
+                break;
+        }
     }
 
     public void setReminder(View view) {
@@ -49,72 +96,32 @@ public class MainActivity extends AppCompatActivity implements
         // gets fired at the set interval
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pd);
     }
-    TextView mainButton1 = findViewById(R.id.MainButton1);
-    mainButton1.setOnClickListener(this);
 
-    TextView mainButton2 = findViewById(R.id.MainButton2);
-    mainButton2.setOnClickListener(this);
-
-    TextView mainButton3 = findViewById(R.id.MainButton3);
-    mainButton3.setOnClickListener(this);
-
-    TextView mainButton4 = findViewById(R.id.MainButton4);
-    mainButton4.setOnClickListener(this);
-
+    private void createNotificationChannel(){
+        //First , check SDK version
+        // Create notification channel only if SDK version > Android 8 Oreo
+        //CAUTION: It's Oreo's O , not number 0!!!
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            String channelID = "BT_Tracker_Channel";
+            String channelName = "BTTrackerReminderChannel";
+            String channelDescription = "Channel for BT Tracker reminder ";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(channelID,channelName,importance);
+            channel.setDescription(channelDescription);
+            //Create notification manager
+            NotificationManager notificationManager =
+                    getSystemService(NotificationManager.class);
+            //Create notification channel
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
 
 
-    @Override
-    public void onClick(View view){
-    switch(view.getId()){
-        case R.id.MainButton1:
-               // If MainButton1 is clicked , do  something
-               Intent toLog=new Intent(this , LogActivity.class);
-               startActivity(toLog);
-               break;
-
-        case R.id.MainButton2:
-                //If MainButton2 is clicked , do something
-                Intent toNormal = new Intent(this , NormalActivity.class);
-                startActivity(toNormal);
-                break;
-
-        case R.id.MainButton3:
-               //If MainButton3 is clicked , do something
-               Intent toMechanism = new Intent(this,MechanismActivity.class);
-               startActivity(toMechanism);
-        break;
-
-        case R.id.MainButton4:
-               //If MainButton3 is clicked , do something
-               Intent openFeverLink = new Intent(Intent.ACTION_VIEW ,
-                       Uri.parse("http://www.healthline.com/health/how-to-break-a-fever"));
-                       //Verify that the intent openFeverLink will resolve properly
-               if(openFeverLink.resolveActivity(getPackageManager())!= null){
-        }
-        break;
-        }
-     }
-
-private void createNotificationChannel(){
-        //First , check SDK version
-       // Create notification channel only if SDK version > Android 8 Oreo
-      //CAUTION: It's Oreo's O , not number 0!!!
-      if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-          String channelID = "BT_Tracker_Channel";
-          String channelName = "BTTrackerReminderChannel";
-          String channelDescription = "Channel for BT Tracker reminder ";
-          int importance = NotificationManager.IMPORTANCE_DEFAULT;
-          NotificationChannel channel = new NotificationChannel(channelID,channelName,importance);
-          channel.setDescription(channelDescription);
-          //Create notification manager
-          NotificationManager notificationManager =
-                  getSystemService(NotificationManager.class);
-          //Create notification channel
-          notificationManager.createNotificationChannel(channel);
-      }
 }
 
-}
+
+
+
+
 
