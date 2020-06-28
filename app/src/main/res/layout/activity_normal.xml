@@ -4,18 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDF2F4"
     tools:context=".NormalActivity">
 
     <TextView
-        android:id="@+id/NormalTextView1"
-        android:layout_width="366dp"
-        android:layout_height="60dp"
-        android:text="Normal human body temperature  is between 36.0-37.5 "
+        android:id="@+id/NormalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Normal Body Temperature"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#6a4c93"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.135" />
+
+    <ScrollView
+        android:id="@+id/NormalTextScroll"
+        android:layout_width="398dp"
+        android:layout_height="482dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NormalTitle"
+        app:layout_constraintVertical_bias="0.204">
+
+
+        <TextView
+            android:id="@+id/normalLongText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#feeafa"
+            android:padding="10dp"
+            android:text="@string/normalRangeText"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK TO HOME"
+        android:onClick="normalToHome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NormalTextScroll"
+        app:layout_constraintVertical_bias="0.284" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

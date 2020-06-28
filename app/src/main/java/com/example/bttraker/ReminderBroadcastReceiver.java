@@ -25,7 +25,7 @@ public class ReminderBroadcastReceiver extends BroadcastReceiver {
                 .setSmallIcon(R.mipmap.ic_launcher_round)
                 .setContentTitle("Notification from BT Tracker")
                 .setContentText("Please log your body temperature now")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(contentIntent);//Append the PendingIntent when building notification
 
           NotificationManagerCompat notificationManager=
